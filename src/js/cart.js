@@ -1,4 +1,5 @@
 import { getLocalStorage } from "./utils.mjs";
+console.log(window.location.hostname);
 
 // function renderCartContents() {
 //   const cartItems = getLocalStorage("so-cart");
@@ -27,12 +28,14 @@ import { getLocalStorage } from "./utils.mjs";
 
 // renderCartContents();
 function fixPath(path) {
+  console.log(window.location.hostname);
   if (!path) return "";
 
   // Check if we're in production (Netlify)
   const isProduction =
+  
     window.location.hostname !== "localhost" &&
-    window.location.hostname !== "127.0.0.1";
+  window.location.hostname !== "127.0.0.1";
 
   // For production, convert to absolute path
   if (isProduction) {
