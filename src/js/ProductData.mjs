@@ -11,16 +11,15 @@ export default class ProductData {
     this.category = category;
 
     // Check if we're in production (Netlify)
-    const isProduction = window.location.hostname !== "localhost"&&
-                        window.location.hostname !== "127.0.0.1";
+    const isProduction = window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1";
 
     // For production (Netlify), use absolute path from root
     if (isProduction) {
       this.path = `/json/${this.category}.json`;
     } else {
       // For local development, use relative path
-      const pathDepth = window.location.pathname.split('/').length - 2;
-      const pathPrefix = '../'.repeat(pathDepth);
+      const pathDepth = window.location.pathname.split("/").length - 2;
+      const pathPrefix = "../".repeat(pathDepth);
       this.path = `${pathPrefix}json/${this.category}.json`;
     }
   }
