@@ -34,7 +34,7 @@ function fixPath(path) {
   // Check if we're in production (Netlify)
   const isProduction =
   
-    window.location.hostname !== "localhost";
+    window.location.hostname !== "localhost" && window.location.hostname !== "127.0.01";
 
   // For production, convert to absolute path
   if (isProduction) {
