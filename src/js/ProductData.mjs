@@ -16,6 +16,7 @@ export default class ProductData {
     // For production (Netlify), use absolute path from root
     if (isProduction) {
       this.path = `/json/${this.category}.json`;
+      console.log(this.path);
     } else {
       // For local development, use relative path
       const pathDepth = window.location.pathname.split("/").length - 2;
