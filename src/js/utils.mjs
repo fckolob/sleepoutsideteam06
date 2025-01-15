@@ -69,3 +69,19 @@ export function setClick(selector, callback) {
     element.addEventListener("click", callback);
   }
 }
+
+//Creating getParams for get a parameter from the URL that we need.
+export function getParam(param){
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const parameter = urlParams.get(param);
+return parameter;
+}
+
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false){
+  const htmlStrings = list.map(templateFn);
+  if (clear){
+    parentElement.innerHTML(position, htmlStrings.join(""));
+  }
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
