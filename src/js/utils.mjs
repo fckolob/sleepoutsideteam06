@@ -77,7 +77,7 @@ const urlParams = new URLSearchParams(queryString);
 const parameter = urlParams.get(param);
 return parameter;
 }
-
+//render elements using acepting template function as a parameter. 
 export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false){
   const htmlStrings = list.map(templateFn);
   if (clear){
